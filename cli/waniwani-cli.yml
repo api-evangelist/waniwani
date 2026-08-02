@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.waniwani.ai/sdk/cli/overview
+name: waniwani
+package: "@waniwani/cli"
+binary: waniwani
+runtime: Node.js 20+
+official: true
+license: MIT
+install:
+  - bun add -g @waniwani/cli
+  - npm install -g @waniwani/cli
+  - pnpm add -g @waniwani/cli
+  - yarn global add @waniwani/cli
+auth: "OAuth 2.1 PKCE (browser); or WANIWANI_API_KEY for CI"
+config_files: {auth_state: .waniwani/settings.json, project: waniwani.json}
+env_vars:
+  - {name: WANIWANI_API_URL, purpose: "Override API base URL (default https://app.waniwani.ai)"}
+  - {name: WANIWANI_API_KEY, purpose: "Use a long-lived API key instead of OAuth tokens (CI)"}
+commands:
+  - {name: login, description: "OAuth2 PKCE login; opens browser, stores tokens in .waniwani/settings.json", flags: ["--json"]}
+  - {name: logout, description: "Clear local credentials", flags: ["--json"]}
+  - {name: connect, description: "Interactive: pick org, pick/create agent (managed or external), write binding to waniwani.json"}
+  - {name: dev, description: "Run local MCP (auto-detects bun/pnpm/yarn/npm) and open the WaniWani playground bridged to localhost", flags: ["-p, --port <port>"]}
+key_flows:
+  - "login -> connect -> dev: local MCP server talking to ChatGPT/Claude/Cursor through the hosted playground"

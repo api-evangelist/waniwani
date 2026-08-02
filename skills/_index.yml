@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/WaniWani-AI/sdk/tree/main/skills/waniwani-sdk
+skills:
+  - file: waniwani-sdk-skill.md
+    name: waniwani-sdk
+    description: >-
+      Provider-published Agent Skill for building MCP funnels with @waniwani/sdk
+      (sales funnels, lead generation, booking, insurance/pricing quotes,
+      knowledge base, embedded chat) plus revenue-first event tracking.
+    api: "@waniwani/sdk"
+    install: npx skills add WaniWani-AI/sdk -s waniwani-sdk
+    docs: https://docs.waniwani.ai/sdk/guides/skills
+    license: MIT
+    official: true

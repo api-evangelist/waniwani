@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.waniwani.ai/sdk/changelog
+versioning:
+  scheme: semver
+  current: {"@waniwani/sdk": 0.15.2, "@waniwani/cli": 0.1.15}
+  docs: https://docs.waniwani.ai/sdk/changelog
+deprecation:
+  policy: "Security fixes ship only to the latest 0.x minor; older minors not patched (SECURITY.md). Legacy SDK APIs marked @deprecated; @waniwani/sdk/evals removed."
+  policy_url: https://docs.waniwani.ai/sdk/changelog
+  security_policy_url: https://github.com/WaniWani-AI/sdk/blob/main/SECURITY.md
+  sunset_header: false
+supported_versions: {"@waniwani/sdk": "latest 0.x only"}
+status_page: null
+deprecated_operations: []

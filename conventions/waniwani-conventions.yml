@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.waniwani.ai/llms.txt
+authentication:
+  style: "OAuth 2.1 (PKCE) for CLI + hosted MCP server; optional WANIWANI_API_KEY (wwk_ prefix) for SDK hosted tier"
+  ref: authentication/waniwani-authentication.yml
+protocol:
+  primary: MCP (Model Context Protocol)
+  note: "Funnels are built as MCP tools; one typed state graph (createFlow) compiles to one MCP tool."
+regions:
+  routing: "Choose the region where your org's data lives"
+  hosts: {us: https://mcp.waniwani.ai/mcp, eu: https://eu.mcp.waniwani.ai/mcp}
+sessions:
+  model: "Server-side flow state persisted under a session id (from MCP _meta); model carries nothing between calls"
+  store: "Pluggable KvStore (Redis, Upstash, Cloudflare KV, DynamoDB, Postgres, in-memory) or hosted WaniwaniKvStore"
+tracking:
+  identity: "externalUserId correlates sessions and off-platform conversions"
+  taxonomy: "lead_qualified -> price_shown / prices_compared / option_selected -> converted"
+versioning:
+  scheme: semver
+  stability: "SDK 0.x (minor bumps may break); CLI 0.x (stable command surface)"
+  ref: changelog/waniwani-changelog.yml
+error_envelope:
+  sdk: "WaniWaniError thrown by hosted-tier calls when WANIWANI_API_KEY is not set"
+idempotency:
+  supported: false
+  note: "No documented idempotency-key contract on a public REST API; flow resumability is session-based."

@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.waniwani.ai/sdk/chat/embed
+families:
+  - name: Chat widget
+    description: "Embeddable conversational chat surface backed by the WaniWani Platform (free tier)."
+    delivery:
+      - {kind: script-embed, entry: "@waniwani/sdk/chat/embed.js", docs: https://docs.waniwani.ai/sdk/chat/embed, note: "One-line <script> install for any website"}
+      - {kind: react-component, entry: "@waniwani/sdk/chat (ChatEmbed)", docs: https://docs.waniwani.ai/sdk/chat/react}
+      - {kind: stylesheet, entry: "@waniwani/sdk/chat/styles.css", note: "Prebuilt Tailwind styles"}
+  - name: Flow widgets
+    description: "In-conversation widget cards emitted by a flow node (quote/option cards) rendered inside the AI client."
+    delivery:
+      - {kind: sdk-primitive, entry: "@waniwani/sdk/mcp (widget node handlers)", docs: https://docs.waniwani.ai/sdk/flows/nodes}
+notes: "Client-side / embeddable surfaces, distinct from the server-side SDK."

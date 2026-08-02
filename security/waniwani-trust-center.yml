@@ -1,0 +1,10 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+url: https://compliance.waniwani.ai/overview
+source: https://compliance.waniwani.ai/overview
+certifications: [SOC 2 Type II, GDPR, EU AI Act, DORA]
+evidence:
+  - {source: "https://compliance.waniwani.ai/overview", kind: trust-center, keywords: [compliance, trust]}
+  - {source: "https://www.waniwani.ai/llms.txt", kind: compliance-claims, keywords: ["soc 2 type ii", gdpr, "eu ai act", dora]}
+notes: "Hosted trust center (compliance.waniwani.ai). Compliance monitoring is also a first-party product covering GDPR, EU AI Act, DORA, SOC 2."

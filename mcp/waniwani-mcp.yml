@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://docs.waniwani.ai/mcp-server/overview
+description: >-
+  WaniWani's own hosted MCP server for operating the WaniWani platform
+  conversationally from Claude, Cursor, or ChatGPT (manage environments, API
+  keys, analytics digests, session breakdowns). This is distinct from the MCP
+  funnel servers customers build with @waniwani/sdk.
+servers:
+  - name: waniwani-us
+    region: US
+    transport: http
+    url: https://mcp.waniwani.ai/mcp
+    auth: oauth2.1
+    authorization_servers:
+      - https://app.waniwani.ai
+  - name: waniwani-eu
+    region: EU
+    transport: http
+    url: https://eu.mcp.waniwani.ai/mcp
+    auth: oauth2.1
+    authorization_servers:
+      - https://app.waniwani.ai
+auth:
+  scheme: OAuth 2.1
+  bearer_methods: [header]
+  api_keys: false
+  well_known: /.well-known/oauth-protected-resource
+docs:
+  overview: https://docs.waniwani.ai/mcp-server/overview
+  connect: https://docs.waniwani.ai/mcp-server/connect
+  how_it_works: https://docs.waniwani.ai/mcp-server/how-it-works
+tools:
+  - name: whoami
+    description: Identify the authenticated principal and current context.
+  - name: set_active_org
+    description: Select the active organization for subsequent operations.
+  - name: search
+    description: Search across the WaniWani platform surface (environments, analytics, sessions).
+  - name: execute
+    description: Execute a sandboxed platform operation resolved from search results.

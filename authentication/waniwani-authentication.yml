@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.waniwani.ai/mcp-server/connect
+docs: https://docs.waniwani.ai/sdk/configuration/environment-variables
+summary:
+  types: [oauth2, apiKey]
+  oauth2_flows: [authorizationCode]
+  oauth2_version: "2.1"
+  api_key_in: [env, header]
+schemes:
+  - name: OAuth2.1
+    type: oauth2
+    version: "2.1"
+    pkce: true
+    applies_to:
+      - "@waniwani/cli (waniwani login browser OAuth2 PKCE)"
+      - "hosted MCP server (mcp.waniwani.ai, eu.mcp.waniwani.ai)"
+    authorization_servers: [https://app.waniwani.ai]
+    bearer_methods: [header]
+    scopes_ref: scopes/waniwani-scopes.yml
+    notes: "CLI stores access/refresh tokens in .waniwani/settings.json and auto-refreshes on 401."
+  - name: ApiKey
+    type: apiKey
+    key_prefix: "wwk_"
+    env: WANIWANI_API_KEY
+    applies_to:
+      - "@waniwani/sdk hosted tier (hosted flow state, tracking, KB, chat widget)"
+      - "CI / long-lived programmatic access as an alternative to OAuth tokens"
+    notes: "Optional. OSS flow engine runs with no key; WANIWANI_API_KEY opts into the hosted Platform."

@@ -1,20 +1,74 @@
+x-enrichment:
+  date: '2026-07-21'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
 aid: waniwani
 name: Waniwani
-description: Waniwani is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Waniwani is an AI distribution platform: it helps companies build, deploy, and
+  optimize AI apps — lightweight services built on the Model Context Protocol
+  (MCP) that represent a product inside AI conversations on ChatGPT, Claude,
+  Gemini, and Perplexity. The platform spans an AI app builder, synthetic-buyer
+  monitoring, full-funnel analytics, and continuous compliance monitoring (GDPR,
+  EU AI Act, DORA, SOC 2). Its open-source TypeScript SDK (@waniwani/sdk) and CLI
+  (@waniwani/cli) let any quote-based vendor — insurance, mortgage, software,
+  home services — build multi-step conversational funnels (lead generation,
+  booking, quotes) that compile to a single MCP tool, backed by a hosted MCP
+  server for operating the platform from an AI client. Backed by an $8M seed
+  round led by Seedcamp.
 url: https://raw.githubusercontent.com/api-evangelist/waniwani/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - seedcamp
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-surface
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://compliance.waniwani.ai/brand/logo
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Artificial Intelligence
+- Model Context Protocol
+- AI Distribution
+- Conversational AI
+- Lead Generation
+- Insurance
+- Fintech
+- Agents
+- SDK
+apis:
+- name: WaniWani Platform
+  description: >-
+    The WaniWani AI-distribution platform and its hosted MCP server — build MCP
+    funnels with the open-source SDK/CLI, operate environments, API keys,
+    analytics and sessions via the OAuth 2.1 MCP server.
+  humanURL: https://docs.waniwani.ai
+  baseURL: https://app.waniwani.ai
+  tags:
+  - MCP
+  - AI Distribution
+  properties:
+  - type: Documentation
+    url: https://docs.waniwani.ai
+  - type: APIReference
+    url: https://docs.waniwani.ai/sdk/reference/entry-points
+  - type: MCPServer
+    url: mcp/waniwani-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -22,4 +76,68 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://waniwani.ai
+  url: https://www.waniwani.ai
+- type: DeveloperPortal
+  url: https://docs.waniwani.ai
+- type: Documentation
+  url: https://docs.waniwani.ai
+- type: APIReference
+  url: https://docs.waniwani.ai/sdk/reference/entry-points
+- type: GettingStarted
+  url: https://docs.waniwani.ai/sdk/quickstart
+- type: Blog
+  url: https://www.waniwani.ai/blog
+- type: GitHubOrganization
+  url: https://github.com/WaniWani-AI
+- type: SignUp
+  url: https://app.waniwani.ai
+- type: Pricing
+  url: https://app.waniwani.ai
+- type: TermsOfService
+  url: https://www.waniwani.ai/terms
+- type: PrivacyPolicy
+  url: https://www.waniwani.ai/privacy
+- type: Support
+  url: https://github.com/WaniWani-AI/sdk/issues
+- type: Packages
+  url: packages/waniwani-packages.yml
+- type: SDKs
+  url: packages/waniwani-packages.yml
+- type: CLI
+  url: cli/waniwani-cli.yml
+- type: MCPServer
+  url: mcp/waniwani-mcp.yml
+- type: LLMsTxt
+  url: llms/waniwani-llms.txt
+- type: WellKnown
+  url: well-known/waniwani-well-known.yml
+- type: OAuthScopes
+  url: scopes/waniwani-scopes.yml
+- type: Authentication
+  url: authentication/waniwani-authentication.yml
+- type: Conformance
+  url: conformance/waniwani-conformance.yml
+- type: Compliance
+  url: https://compliance.waniwani.ai/overview
+- type: TrustCenter
+  url: https://compliance.waniwani.ai/overview
+- type: VulnerabilityDisclosure
+  url: security/waniwani-vulnerability-disclosure.yml
+- type: Security
+  url: https://github.com/WaniWani-AI/sdk/blob/main/SECURITY.md
+- type: DomainSecurity
+  url: security/waniwani-domain-security.yml
+- type: Conventions
+  url: conventions/waniwani-conventions.yml
+- type: ChangeLog
+  url: changelog/waniwani-changelog.yml
+- type: Lifecycle
+  url: lifecycle/waniwani-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/waniwani-lifecycle.yml
+- type: Sandbox
+  url: sandbox/waniwani-sandbox.yml
+- type: Components
+  url: components/waniwani-components.yml
+- type: AgentSkill
+  url: skills/waniwani-sdk-skill.md

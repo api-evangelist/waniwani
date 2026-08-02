@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.npmjs.com/org/waniwani
+packages:
+  - language: javascript
+    registry: npm
+    name: "@waniwani/sdk"
+    url: https://www.npmjs.com/package/@waniwani/sdk
+    install: bun add @waniwani/sdk @modelcontextprotocol/sdk zod
+    version: 0.15.2
+    license: MIT
+    official: true
+    description: >-
+      MCP distribution SDK. Build sales funnels, lead generation, booking, and
+      quote apps on top of your MCP server. One typed state graph (createFlow)
+      compiles to one MCP tool. Event tracking, flows, widgets, knowledge base.
+    repository: https://github.com/WaniWani-AI/sdk
+  - language: javascript
+    registry: npm
+    name: "@waniwani/cli"
+    url: https://www.npmjs.com/package/@waniwani/cli
+    install: npm install -g @waniwani/cli
+    version: 0.1.15
+    license: MIT
+    official: true
+    description: >-
+      WaniWani CLI for the MCP development workflow. login (OAuth2 PKCE),
+      connect (bind repo to an agent), dev (run local MCP against the hosted
+      playground). Binary name `waniwani`. Requires Node.js 20+.
+    repository: https://github.com/WaniWani-AI/cli

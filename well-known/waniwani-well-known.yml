@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: probe of waniwani.ai + mcp.waniwani.ai .well-known surface
+hosts:
+  - host: https://www.waniwani.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /llms.txt
+        status: 200
+        note: marketing llms.txt (docs OSS index at https://docs.waniwani.ai/llms.txt)
+  - host: https://mcp.waniwani.ai
+    documents:
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: waniwani-mcp-oauth-protected-resource.json
+        note: RFC 9728 protected-resource metadata for the hosted MCP server; authorization_servers = https://app.waniwani.ai
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+  - host: https://eu.mcp.waniwani.ai
+    documents:
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        note: EU-region MCP server protected-resource metadata (same shape as US)

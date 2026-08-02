@@ -1,0 +1,8 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.waniwani.ai/sdk/changelog
+scheme: semver
+components:
+  - {name: "@waniwani/sdk", current_version: 0.15.2, stability: pre-1.0, note: "0.x minor bumps can break; each ships a documented mechanical migration. @waniwani/sdk/evals removed."}
+  - {name: "@waniwani/cli", current_version: 0.1.15, stability: pre-1.0, note: "Command surface (login/logout/connect/dev) small and stable; flags may change before v1."}
+changelog_url: https://docs.waniwani.ai/sdk/changelog

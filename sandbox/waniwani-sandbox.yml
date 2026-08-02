@@ -1,0 +1,10 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.waniwani.ai/sdk/quickstart
+modes:
+  - {name: Local dev bridge, how: "waniwani dev spawns your local MCP server and opens the playground with localMode=1 routing chat to localhost:3000", docs: https://docs.waniwani.ai/sdk/cli/overview}
+  - {name: Hosted playground, how: "Dashboard playground at app.waniwani.ai to exercise a connected agent conversationally", docs: https://docs.waniwani.ai/sdk/guides/tunnel}
+  - {name: Pure OSS (no key), how: "Run createFlow with MemoryKvStore and no API key for dev/tests", docs: https://docs.waniwani.ai/sdk/quickstart}
+  - {name: Free tier, how: "Set WANIWANI_API_KEY (free plan) to unlock hosted flow state, tracking, KB, chat widget", docs: https://docs.waniwani.ai/sdk/configuration/api-key}
+test_values:
+  note: "Provider publishes no fixed magic test cards/identifiers; testing is via the local dev bridge, MemoryKvStore, and the hosted playground."

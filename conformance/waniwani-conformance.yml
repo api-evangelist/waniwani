@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.waniwani.ai/llms.txt
+docs: https://compliance.waniwani.ai/overview
+standards:
+  - {id: soc2-type2, conforms: true, evidence: "Stated 'SOC 2 Type II Certified' on waniwani.ai/llms.txt; trust center compliance.waniwani.ai"}
+  - {id: gdpr, conforms: true, evidence: "Stated 'GDPR Compliant'; EU data-residency MCP region eu.mcp.waniwani.ai"}
+  - {id: eu-ai-act, conforms: true, evidence: "Stated 'EU AI Act Ready'; compliance monitoring product covers EU AI Act"}
+  - {id: dora, conforms: true, evidence: "Stated 'DORA Compliant'; targets regulated financial-services distribution"}
+  - {id: oauth2, conforms: true, evidence: "Hosted MCP server + CLI use OAuth 2.1 (protected-resource metadata published)"}
+  - {id: rfc9728-protected-resource, conforms: true, evidence: "mcp.waniwani.ai/.well-known/oauth-protected-resource returns 200"}
+  - {id: mcp, conforms: true, evidence: "MCP native; SDK builds MCP funnels, hosted MCP server published"}

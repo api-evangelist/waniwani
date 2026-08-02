@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: https://mcp.waniwani.ai/.well-known/oauth-protected-resource
+docs: https://docs.waniwani.ai/mcp-server/how-it-works
+schemes:
+  - name: OAuth2.1
+    source: https://mcp.waniwani.ai/.well-known/oauth-protected-resource
+    authorization_servers: [https://app.waniwani.ai]
+    resource: https://mcp.waniwani.ai/mcp
+    bearer_methods: [header]
+scopes:
+  - {scope: "mcp:tools", description: "Invoke the hosted MCP server's tools."}
+  - {scope: "openid", description: "OpenID Connect authentication."}
+  - {scope: "profile", description: "Access basic profile information."}
+  - {scope: "email", description: "Access the account email address."}
+  - {scope: "offline_access", description: "Obtain refresh tokens for long-lived access."}
+  - {scope: "orgs:read", description: "Read organization details."}
+  - {scope: "orgs:write", description: "Manage organizations."}
+  - {scope: "mcp:read", description: "Read MCP server resources."}
+  - {scope: "mcp:write", description: "Modify MCP server resources."}
+  - {scope: "kb:read", description: "Read knowledge base content."}
+  - {scope: "kb:write", description: "Write knowledge base content."}
+  - {scope: "analytics:read", description: "Read funnel analytics and digests."}
+  - {scope: "analytics:write", description: "Manage analytics configuration."}
+  - {scope: "evals:read", description: "Read synthetic-buyer / evaluation results."}
+  - {scope: "evals:write", description: "Manage synthetic-buyer / evaluation runs."}
+  - {scope: "conversations:read", description: "Read conversation and session data."}
+  - {scope: "conversations:write", description: "Manage conversation and session data."}
+  - {scope: "competition:read", description: "Read competitive / market-visibility data."}
+  - {scope: "competition:write", description: "Manage competitive-monitoring configuration."}
+  - {scope: "geo:read", description: "Read geo / jurisdiction data."}
+  - {scope: "geo:write", description: "Manage geo / jurisdiction configuration."}
+  - {scope: "connectors:read", description: "Read connector / integration configuration."}
+  - {scope: "connectors:write", description: "Manage connectors / integrations."}
+  - {scope: "superadmin:read", description: "Elevated read access (administrative)."}
+  - {scope: "superadmin:write", description: "Elevated write access (administrative)."}
