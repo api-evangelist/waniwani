@@ -1,34 +1,54 @@
-generated: '2026-07-21'
+generated: '2026-09-19'
 method: searched
 source: probe of waniwani.ai + mcp.waniwani.ai .well-known surface
 hosts:
-  - host: https://www.waniwani.ai
-    documents:
-      - path: /.well-known/security.txt
-        status: 404
-      - path: /.well-known/openid-configuration
-        status: 404
-      - path: /.well-known/oauth-authorization-server
-        status: 404
-      - path: /.well-known/api-catalog
-        status: 404
-      - path: /.well-known/ai-plugin.json
-        status: 404
-      - path: /llms.txt
-        status: 200
-        note: marketing llms.txt (docs OSS index at https://docs.waniwani.ai/llms.txt)
-  - host: https://mcp.waniwani.ai
-    documents:
-      - path: /.well-known/oauth-protected-resource
-        status: 200
-        file: waniwani-mcp-oauth-protected-resource.json
-        note: RFC 9728 protected-resource metadata for the hosted MCP server; authorization_servers = https://app.waniwani.ai
-      - path: /.well-known/oauth-authorization-server
-        status: 404
-      - path: /.well-known/openid-configuration
-        status: 404
-  - host: https://eu.mcp.waniwani.ai
-    documents:
-      - path: /.well-known/oauth-protected-resource
-        status: 200
-        note: EU-region MCP server protected-resource metadata (same shape as US)
+- host: https://www.waniwani.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    note: marketing llms.txt (docs OSS index at https://docs.waniwani.ai/llms.txt)
+- host: https://mcp.waniwani.ai
+  documents:
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: waniwani-mcp-oauth-protected-resource.json
+    note: RFC 9728 protected-resource metadata for the hosted MCP server; authorization_servers = https://app.waniwani.ai
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://eu.mcp.waniwani.ai
+  documents:
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    note: EU-region MCP server protected-resource metadata (same shape as US)
+- host: https://app.waniwani.ai
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: waniwani-app-oauth-authorization-server.json
+    bytes: 1828
+  path_echo_control: passed
+x-mcp-probe:
+  probed: '2026-09-19'
+  issue: roadmap#321, roadmap#337
+  documents:
+  - host: https://app.waniwani.ai
+    path: /.well-known/oauth-authorization-server
+    file: waniwani-app-oauth-authorization-server.json
+  validated_on: resource (RFC 9728) / issuer (RFC 8414, OIDC)
+  negative_control: one per host; a 2xx JSON object at an impossible path discards the host
+note: 'MCP-host OAuth discovery added 2026-09-19 (roadmap#321/#337): the harvest visits a provider''s
+  primary hosts, and RFC 9728 protected-resource metadata lives on the MCP host, so these documents existed
+  and were invisible to the scorer. Fetched live and validated on `resource`/`issuer`; one negative control
+  per host.'
